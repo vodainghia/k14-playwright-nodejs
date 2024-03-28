@@ -9,4 +9,12 @@ module.exports = defineConfig({
         },
     ],
     reporter: 'html',
+    // CI environment
+    retries: process.env.CI ? 2 : 1,
+    // local
+    use: {
+        trace: 'on-first-retry',
+        video: 'on-first-retry',
+        screenshot: 'only-on-failure',
+    },
 });
