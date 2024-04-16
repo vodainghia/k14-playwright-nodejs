@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 
 // Introducing Elements/Locators
-export default class LoginPageMethod01 {
+export default class LoginPageMethod02 {
 
     // scope to keep element selectors
     private usernameLoc = '#username';
