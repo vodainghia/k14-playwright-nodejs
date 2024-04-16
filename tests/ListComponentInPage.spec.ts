@@ -1,9 +1,8 @@
 import { test } from "@playwright/test";
 import HomePage from "../models/pages/HomePage";
-import SearchComponent from "../models/components/SearchComponent";
 import ProductItemComponent from "../models/components/ProductItemComponent";
 
-test('Test POM - Component in Page', async ({ page }) => {
+test('Test POM - List of Components in Page', async ({ page }) => {
     await page.goto('https://demowebshop.tricentis.com/');
     const homePage: HomePage = new HomePage(page);
     const productItemComponentList: ProductItemComponent[] = await homePage.productItemComponentList();

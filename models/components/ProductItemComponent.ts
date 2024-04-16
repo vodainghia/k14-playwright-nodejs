@@ -6,7 +6,6 @@ export default class ProductItemComponent {
     private productTitleLoc = '.product-title';
     private productPriceLoc = 'span[class*="actual-price"]';
 
-
     constructor(private component: Locator) {
         this.component = component;
     }
