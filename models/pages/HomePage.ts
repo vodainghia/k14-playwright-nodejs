@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
-import SearchComponent from "../components/SearchComponent";
-import ProductItemComponent from "../components/ProductItemComponent";
+import HeaderComponent from "../components/global/header/HeaderComponent";
+import PageBodyComponent from "../components/PageBodyComponent";
+import FooterComponent from "../components/global/footer/FooterComponent";
 
 export default class HomePage {
 
@@ -8,13 +9,15 @@ export default class HomePage {
         this.page = page;
     }
 
-    searchComponent(): SearchComponent {
-        return new SearchComponent(this.page.locator(SearchComponent.selector));
+    headerComponent(): HeaderComponent {
+        return new HeaderComponent(this.page.locator(HeaderComponent.selector));
     }
 
-    // List of components: need to use async because of all() return a Promise
-    async productItemComponentList(): Promise<ProductItemComponent[]> {
-        const productItemComponents = await this.page.locator(ProductItemComponent.selector).all();
-        return productItemComponents.map(comp => new ProductItemComponent(comp));
+    pageBodyComponent(): PageBodyComponent {
+        return new PageBodyComponent(this.page.locator(PageBodyComponent.selector));
+    } 
+
+    footerComponent(): FooterComponent {
+        return new FooterComponent(this.page.locator(FooterComponent.selector));
     }
 }
