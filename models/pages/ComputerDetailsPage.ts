@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import ComputerEssentialComponent from "../components/computer/ComputerEssentialComponent";
 
-type ComputerComponentConstructor<T extends ComputerEssentialComponent> = new (component: Locator) => T;
+export type ComputerComponentConstructor<T extends ComputerEssentialComponent> = new (component: Locator) => T;
 
 export default class ComputerDetailsPage {
 
