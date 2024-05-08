@@ -25,8 +25,8 @@ export default class StandardComputerComponent extends ComputerEssentialComponen
 
     private async selectOption(dropdown: Locator, type: string): Promise<void> {
         const allOptions = await dropdown.locator('option').all();
-        const unexistedRange: number = -1;
-        let optionIndex: number = unexistedRange;
+        const INVALID_INDEX: number = -1;
+        let optionIndex: number = INVALID_INDEX;
 
         for (const optionEle of allOptions) {
             const optionText = await optionEle.textContent();
@@ -37,7 +37,7 @@ export default class StandardComputerComponent extends ComputerEssentialComponen
             }
         }
 
-        if (optionIndex > unexistedRange) {
+        if (optionIndex > INVALID_INDEX) {
             await dropdown.selectOption({ index: optionIndex });
         } else {
             // wait for better approach
