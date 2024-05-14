@@ -7,46 +7,61 @@ export default class OrderComputerFlow {
     private totalPrice: number;
     private productQuantity: number;
 
-    constructor(private page: Page, private computerComponentClass: ComputerComponentConstructor<ComputerEssentialComponent>) {
+    constructor(
+        private page: Page,
+        private computerComponentClass: ComputerComponentConstructor<ComputerEssentialComponent>,
+        private computerData: any
+    ) {
         this.page = page;
         this.computerComponentClass = computerComponentClass;
+        this.computerData = computerData;
     }
 
     async buildCompSpecAndAddToCart(): Promise<void> {
+        // Build computer spec
         const computerDetailsPage: ComputerDetailsPage = new ComputerDetailsPage(this.page);
         const computerComp = computerDetailsPage.computerComp(this.computerComponentClass);
         await computerComp.unselectDefaultOptions();
-        const selectedProcessorText = await computerComp.selectProcessorType("2.2 GHz");
-        const selectedRAMText = await computerComp.selectRAMType("4GB");
-        const selectedHDDText = await computerComp.selectHDDType("400 GB");
-        //await computerComp.selectSoftwareType("Office Suite");
-        console.log(`selectedProcessorText: ${this.extractAdditionalPrice(selectedProcessorText)}`);
-        console.log(`selectedRAMText: ${this.extractAdditionalPrice(selectedRAMText)}`);
-        console.log(`selectedHDDText: ${this.extractAdditionalPrice(selectedHDDText)}`);
 
+        const selectedProcessorText = await computerComp.selectProcessorType(this.computerData.processorType);
+        const selectedRAMText = await computerComp.selectRAMType(this.computerData.ram);
+        const selectedHDDText = await computerComp.selectHDDType(this.computerData.hdd);
+        const selectedSoftwareText = await computerComp.selectSoftwareType(this.computerData.software);
+        
+        let additionalOsPrice = 0;
+        if (this.computerData.os) {
+            const selectedOSText = await computerComp.selectSoftwareType(this.computerData.os);
+            additionalOsPrice = this.extractAdditionalPrice(selectedOSText);
+        }
+        
+        // Calculate current product price
         const basePrice = await computerComp.getProductPrice();
         const additionalPrices =
             this.extractAdditionalPrice(selectedProcessorText) +
             this.extractAdditionalPrice(selectedRAMText) +
-            this.extractAdditionalPrice(selectedHDDText);
+            this.extractAdditionalPrice(selectedHDDText) +
+            this.extractAdditionalPrice(selectedSoftwareText) +
+            additionalOsPrice;
 
         this.productQuantity = await computerComp.getProductQuantity();
         this.totalPrice = (basePrice + additionalPrices) * this.productQuantity;
-        console.log(`totalPrice: ${this.totalPrice}`);
-        await computerComp.clickOnAddToCartBtn();
 
         // Handle waiting add to cart
+        await computerComp.clickOnAddToCartBtn();
         const barNotificationText = await computerDetailsPage.getBarNotificationText();
-        console.log(barNotificationText);
         if (!barNotificationText.startsWith("The product has been added")) {
             throw new Error('Failed to add product to cart');
         }
-        
+
         // Navigate to the shopping cart
         await computerDetailsPage.headerComponent().clickOnShoppingCartLink();
 
         // Debug
         await this.page.waitForTimeout(3 * 1000);
+    }
+
+    public async verifyShoppingCart(): Promise<void> {
+
     }
 
     private extractAdditionalPrice(fullText: string): number {
