@@ -1,0 +1,11 @@
+{
+    "firstName": "Firstname",
+    "lastName": "Lastname",
+    "email": "email@nomail.com",
+    "country": "United States",
+    "state": "California",
+    "city": "San Jose",
+    "add1": "Address 1",
+    "zipcode": "97000",
+    "phoneNum": "0987654321"
+}
