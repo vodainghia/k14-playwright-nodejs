@@ -7,21 +7,15 @@ export default class ShippingMethodComponent extends CheckoutBaseComponent {
 
     protected component: Locator;
 
-    private readonly shippingMethodsSel = 'input[id^="shippingoption"]';
+    private readonly shippingMethodsSel = 'input[id^="shippingoption"] + label';
 
     public constructor(component: Locator) {
         super(component);
         this.component = component;
     }
 
-    public async selectAShippingMethod(): Promise<void> {
-        const shippingMethodElems: Locator[] = await this.component.locator(this.shippingMethodsSel).all();
-        const randomIndex = this.getRandomIndexFromLocatorList(shippingMethodElems);
-        await shippingMethodElems[randomIndex].click();
-    }
-
-    private getRandomIndexFromLocatorList(listItems: Locator[]): number {
-        return Math.floor(Math.random() * listItems.length);
+    public async selectAShippingMethod(): Promise<string> {
+        return await this.selectMethodOption(this.shippingMethodsSel);
     }
 
 }

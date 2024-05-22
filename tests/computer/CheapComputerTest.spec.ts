@@ -12,4 +12,5 @@ test('Test Cheap Computer Component', async ({ page }) => {
     await orderComputerFlow.inputBillingAddress();
     await orderComputerFlow.inputShippingAddress();
     await orderComputerFlow.selectShippingMethod();
+    await orderComputerFlow.selectPaymentMethod();
 });

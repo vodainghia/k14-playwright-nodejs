@@ -8,10 +8,12 @@ import CheckoutPage from "../../models/pages/CheckoutPage";
 import BillingAddressComponent from "../../models/components/checkout/BillingAddressComponent";
 import ShippingAddressComponent from "../../models/components/checkout/ShippingAddressComponent";
 import ShippingMethodComponent from "../../models/components/checkout/ShippingMethodComponent";
+import PaymentMethodComponent from "../../models/components/checkout/PaymentMethodComponent";
 
 export default class OrderComputerFlow {
 
     private totalPrice: number;
+    private totalAdditionalCheckoutPrice: number = 0;
     private productQuantity: number;
 
     constructor(
@@ -113,16 +115,26 @@ export default class OrderComputerFlow {
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const shippingAddressComponent: ShippingAddressComponent = checkoutPage.shippingAddressComponent();
         await shippingAddressComponent.clickContinueBtn();
-
-        // Debug
-        await this.page.waitForTimeout(3 * 1000);
     }
 
     public async selectShippingMethod(): Promise<void> {
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const shippingMethodComponent: ShippingMethodComponent = checkoutPage.shippingMethodComponent();
-        await shippingMethodComponent.selectAShippingMethod();
+        const selectedShippingMethodText = await shippingMethodComponent.selectAShippingMethod();
+        this.totalAdditionalCheckoutPrice += this.extractAdditionalCheckoutPrice(selectedShippingMethodText);
         await shippingMethodComponent.clickContinueBtn();
+
+        console.log(`totalAdditionalCheckoutPrice after step selectShippingMethod(): ${this.totalAdditionalCheckoutPrice}`);
+    }
+
+    public async selectPaymentMethod(): Promise<void> {
+        const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
+        const paymentMethodComponent: PaymentMethodComponent = checkoutPage.paymentMethodComponent();
+        const selectedPaymentMethodText = await paymentMethodComponent.selectAPaymentMethod();
+        this.totalAdditionalCheckoutPrice += this.extractAdditionalCheckoutPrice(selectedPaymentMethodText);
+        await paymentMethodComponent.clickContinueBtn();
+
+        console.log(`totalAdditionalCheckoutPrice after step selectPaymentMethod(): ${this.totalAdditionalCheckoutPrice}`);
 
         // Debug
         await this.page.waitForTimeout(3 * 1000);
@@ -132,6 +144,12 @@ export default class OrderComputerFlow {
         const regex = /\+\d+\.\d+/g;
         const matches = fullText.match(regex) ?? '0';
         return Number(matches[0].replace('+', ''));
+    }
+
+    private extractAdditionalCheckoutPrice(fullText: string): number {
+        const regex = /\(\d+\.\d+/g;
+        const matches = fullText.match(regex) ?? '0';
+        return Number(matches[0].replace('(', ''));
     }
 
 }
