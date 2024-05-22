@@ -6,6 +6,8 @@ import CheckoutOptionsPage from "../../models/pages/CheckoutOptionsPage";
 import defaultCheckoutUserData from "../../test-data/DefaultCheckoutUser.json";
 import CheckoutPage from "../../models/pages/CheckoutPage";
 import BillingAddressComponent from "../../models/components/checkout/BillingAddressComponent";
+import ShippingAddressComponent from "../../models/components/checkout/ShippingAddressComponent";
+import ShippingMethodComponent from "../../models/components/checkout/ShippingMethodComponent";
 
 export default class OrderComputerFlow {
 
@@ -105,6 +107,22 @@ export default class OrderComputerFlow {
         await billingAddressComponent.inputZipCode(zipcode);
         await billingAddressComponent.inputPhoneNum(phoneNum);
         await billingAddressComponent.clickContinueBtn();
+    }
+
+    public async inputShippingAddress(): Promise<void> {
+        const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
+        const shippingAddressComponent: ShippingAddressComponent = checkoutPage.shippingAddressComponent();
+        await shippingAddressComponent.clickContinueBtn();
+
+        // Debug
+        await this.page.waitForTimeout(3 * 1000);
+    }
+
+    public async selectShippingMethod(): Promise<void> {
+        const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
+        const shippingMethodComponent: ShippingMethodComponent = checkoutPage.shippingMethodComponent();
+        await shippingMethodComponent.selectAShippingMethod();
+        await shippingMethodComponent.clickContinueBtn();
 
         // Debug
         await this.page.waitForTimeout(3 * 1000);

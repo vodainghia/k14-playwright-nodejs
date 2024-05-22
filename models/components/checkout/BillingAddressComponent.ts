@@ -1,8 +1,9 @@
 import { Locator } from "@playwright/test";
 import { selector } from "../SelectorDecorator";
+import CheckoutBaseComponent from "./CheckoutBaseComponent";
 
 @selector("#opc-billing")
-export default class BillingAddressComponent{
+export default class BillingAddressComponent extends CheckoutBaseComponent {
 
     protected component: Locator;
 
@@ -15,9 +16,9 @@ export default class BillingAddressComponent{
     private readonly add1Sel = '#BillingNewAddress_Address1';
     private readonly zipCodeSel = '#BillingNewAddress_ZipPostalCode';
     private readonly phoneNumSel = '#BillingNewAddress_PhoneNumber';
-    private readonly continueBtnSel = 'input[value="Continue"]';
 
     public constructor(component: Locator) {
+        super(component);
         this.component = component;
     }
 
@@ -55,10 +56,6 @@ export default class BillingAddressComponent{
 
     public async inputPhoneNum(phoneNum: string): Promise<void> {
         await this.component.locator(this.phoneNumSel).fill(phoneNum);
-    }
-
-    public async clickContinueBtn(): Promise<void> {
-        await this.component.locator(this.continueBtnSel).click();
     }
 
 }

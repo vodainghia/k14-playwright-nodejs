@@ -10,4 +10,6 @@ test('Test Standard Computer Component', async ({ page }) => {
     await orderComputerFlow.verifyShoppingCart();
     await orderComputerFlow.agreeTOSAndCheckout();
     await orderComputerFlow.inputBillingAddress();
+    await orderComputerFlow.inputShippingAddress();
+    await orderComputerFlow.selectShippingMethod();
 });
