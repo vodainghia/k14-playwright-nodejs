@@ -1,20 +1,22 @@
-import { Page } from "@playwright/test";
-import ComputerDetailsPage, { ComputerComponentConstructor } from "../../models/pages/ComputerDetailsPage";
+import {Page} from "@playwright/test";
+import defaultCheckoutUserData from "../../test-data/DefaultCheckoutUser.json";
+import defaultCheckoutCardData from "../../test-data/DefaultCheckoutCard.json";
+import ComputerDetailsPage, {ComputerComponentConstructor} from "../../models/pages/ComputerDetailsPage";
 import ComputerEssentialComponent from "../../models/components/computer/ComputerEssentialComponent";
 import ShoppingCartPage from "../../models/pages/ShoppingCartPage";
 import CheckoutOptionsPage from "../../models/pages/CheckoutOptionsPage";
-import defaultCheckoutUserData from "../../test-data/DefaultCheckoutUser.json";
 import CheckoutPage from "../../models/pages/CheckoutPage";
 import BillingAddressComponent from "../../models/components/checkout/BillingAddressComponent";
-import ShippingAddressComponent from "../../models/components/checkout/ShippingAddressComponent";
 import ShippingMethodComponent from "../../models/components/checkout/ShippingMethodComponent";
 import PaymentMethodComponent from "../../models/components/checkout/PaymentMethodComponent";
+import PAYMENT_METHOD from "../../constants/Payment";
+import PaymentInformationComponent from "../../models/components/checkout/PaymentInformationComponent";
 
 export default class OrderComputerFlow {
 
-    private totalPrice: number;
+    private totalPrice: number = 0;
     private totalAdditionalCheckoutPrice: number = 0;
-    private productQuantity: number;
+    private productQuantity: number = 0;
 
     constructor(
         private page: Page,
@@ -95,10 +97,11 @@ export default class OrderComputerFlow {
     }
 
     public async inputBillingAddress(): Promise<void> {
-        // Should utilize default data
-        const { firstName, lastName, email, country, state, city, add1, zipcode, phoneNum } = defaultCheckoutUserData;
+        // Should utilize default data for e2e when have not apply data driven
+        const {firstName, lastName, email, country, state, city, add1, zipcode, phoneNum} = defaultCheckoutUserData;
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const billingAddressComponent: BillingAddressComponent = checkoutPage.billingAddressComponent();
+
         await billingAddressComponent.inputFirstname(firstName);
         await billingAddressComponent.inputLastname(lastName);
         await billingAddressComponent.inputEmailAddress(email);
@@ -112,32 +115,65 @@ export default class OrderComputerFlow {
     }
 
     public async inputShippingAddress(): Promise<void> {
-        const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
-        const shippingAddressComponent: ShippingAddressComponent = checkoutPage.shippingAddressComponent();
-        await shippingAddressComponent.clickContinueBtn();
+        await new CheckoutPage(this.page).shippingAddressComponent().clickContinueBtn();
     }
 
     public async selectShippingMethod(): Promise<void> {
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const shippingMethodComponent: ShippingMethodComponent = checkoutPage.shippingMethodComponent();
         const selectedShippingMethodText = await shippingMethodComponent.selectAShippingMethod();
+
         this.totalAdditionalCheckoutPrice += this.extractAdditionalCheckoutPrice(selectedShippingMethodText);
         await shippingMethodComponent.clickContinueBtn();
 
         console.log(`totalAdditionalCheckoutPrice after step selectShippingMethod(): ${this.totalAdditionalCheckoutPrice}`);
     }
 
-    public async selectPaymentMethod(): Promise<void> {
+    public async selectPaymentMethod(paymentMethod: string): Promise<void> {
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const paymentMethodComponent: PaymentMethodComponent = checkoutPage.paymentMethodComponent();
-        const selectedPaymentMethodText = await paymentMethodComponent.selectAPaymentMethod();
-        this.totalAdditionalCheckoutPrice += this.extractAdditionalCheckoutPrice(selectedPaymentMethodText);
+
+        switch (paymentMethod) {
+            case PAYMENT_METHOD.cod:
+                await paymentMethodComponent.selectCODMethod();
+                break;
+            case PAYMENT_METHOD.checkMoneyOrder:
+                await paymentMethodComponent.selectCheckMoneyOrderMethod();
+                break;
+            case PAYMENT_METHOD.creditCard:
+                await paymentMethodComponent.selectCreditCardMethod();
+                break;
+            default:
+                await paymentMethodComponent.selectPurchaseOrderMethod();
+                break;
+        }
+
+        //const selectedPaymentMethodText = await paymentMethodComponent.selectAPaymentMethod();
+        //this.totalAdditionalCheckoutPrice += this.extractAdditionalCheckoutPrice(selectedPaymentMethodText);
         await paymentMethodComponent.clickContinueBtn();
 
         console.log(`totalAdditionalCheckoutPrice after step selectPaymentMethod(): ${this.totalAdditionalCheckoutPrice}`);
+    }
 
-        // Debug
-        await this.page.waitForTimeout(3 * 1000);
+    // link: https://developer.paypal.com/api/rest/sandbox/card-testing/
+    public async inputPaymentInformation(creditCardType: string): Promise<void> {
+        const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
+        const paymentInformationComponent: PaymentInformationComponent = checkoutPage.paymentInformationComponent();
+        const {firstName, lastName} = defaultCheckoutUserData;
+        const {cardNumber, expirationMonth, expirationYear, cardCode} = defaultCheckoutCardData;
+
+        await paymentInformationComponent.selectCardType(creditCardType);
+        await paymentInformationComponent.inputCardHolderName(firstName + ' ' + lastName);
+        await paymentInformationComponent.inputCardNumber(cardNumber);
+        await paymentInformationComponent.selectExpirationMonth(expirationMonth);
+        await paymentInformationComponent.selectExpirationYear(expirationYear);
+        await paymentInformationComponent.inputCardCode(cardCode);
+        await paymentInformationComponent.clickContinueBtn();
+    }
+
+    public async confirmOrder(): Promise<void> {
+        // TODO: Can add more steps here included verifications
+        await new CheckoutPage(this.page).confirmOrderComponent().clickConfirmBtn();
     }
 
     private extractAdditionalPrice(fullText: string): number {

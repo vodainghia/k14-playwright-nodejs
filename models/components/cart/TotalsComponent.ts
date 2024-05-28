@@ -17,7 +17,7 @@ export default class TotalsComponent {
     }
 
     public async priceCategories(): Promise<any> {
-        let priceCategories = {};
+        let priceCategories: Record<string, number> = {};
         const priceTableRowElems = await this.component.locator(this.priceTableRowSel).all();
 
         for (const tableRowElem of priceTableRowElems) {

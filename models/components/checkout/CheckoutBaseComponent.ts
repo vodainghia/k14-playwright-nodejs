@@ -4,7 +4,7 @@ export default class CheckoutBaseComponent {
 
     protected component: Locator;
 
-    protected readonly continueBtnSel = 'input[value="Continue"]';
+    protected readonly continueBtnSel: string = 'input[value="Continue"]';
 
     protected constructor(component: Locator) {
         this.component = component;

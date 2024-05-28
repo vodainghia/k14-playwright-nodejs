@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/constants/CreditCardType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/Payment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-data/DefaultCheckoutCard.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/SelectorDecorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/SelectorDecorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/cart/TotalsComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/cart/TotalsComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/PaymentInformationComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/PaymentInformationComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/PaymentMethodComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/PaymentMethodComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ListComponentInPage.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ListComponentInPage.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:vodainghia/k14-playwright-nodejs.git&quot;,
+    &quot;accountId&quot;: &quot;1322f8b8-d049-4ee5-a0e8-6dbe311b0afc&quot;
+  }
+}</component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2h5xmLaZnBJZNNJ96iZ32JkkklH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;day29&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;21.7.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Admin/Software Engineer/SDET-PRO/k14-playwright-nodejs/test-data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/Aqua.app/Contents/plugins/javascript-base/jsLanguageServicesImpl/external&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test-data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.Unnamed">
+    <configuration name="All Tests" type="JavaScriptTestRunnerPlaywright" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="--require ts-node/register" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="Playwright.All Tests" />
+    </list>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://demowebshop.tricentis.com/onepagecheckout" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="" />
+      <created>1716897899115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716897899115</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
