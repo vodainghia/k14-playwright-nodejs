@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/constants/CreditCardType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/Payment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-data/DefaultCheckoutCard.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/SelectorDecorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/SelectorDecorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/cart/TotalsComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/cart/TotalsComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/PaymentInformationComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/PaymentInformationComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/PaymentMethodComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/PaymentMethodComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/BillingAddressComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/BillingAddressComponent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-data/computer/CheapComputerData.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-data/computer/CheapComputerData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ListComponentInPage.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ListComponentInPage.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,30 +59,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;day29&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;21.7.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;&quot;,
-    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Admin/Software Engineer/SDET-PRO/k14-playwright-nodejs/test-data&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/Aqua.app/Contents/plugins/javascript-base/jsLanguageServicesImpl/external&quot;,
-    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "day30",
+    "javascript.nodejs.core.library.configured.version": "21.7.1",
+    "javascript.nodejs.core.library.typings.version": "20.13.0",
+    "js.last.introduce.type": "CONST",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/Admin/Software Engineer/SDET-PRO/k14-playwright-nodejs/test-data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "ts.external.directory.path": "/Applications/Aqua.app/Contents/plugins/javascript-base/jsLanguageServicesImpl/external",
+    "typescript.add.unambiguous.imports.on.the.fly": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test-data" />
@@ -130,6 +121,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

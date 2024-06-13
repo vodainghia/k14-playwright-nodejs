@@ -102,6 +102,7 @@ export default class OrderComputerFlow {
         const checkoutPage: CheckoutPage = new CheckoutPage(this.page);
         const billingAddressComponent: BillingAddressComponent = checkoutPage.billingAddressComponent();
 
+        await billingAddressComponent.selectInputNewAddress();
         await billingAddressComponent.inputFirstname(firstName);
         await billingAddressComponent.inputLastname(lastName);
         await billingAddressComponent.inputEmailAddress(email);

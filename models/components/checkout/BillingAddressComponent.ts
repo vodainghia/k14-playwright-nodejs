@@ -1,5 +1,5 @@
-import { Locator } from "@playwright/test";
-import { selector } from "../SelectorDecorator";
+import {Locator} from "@playwright/test";
+import {selector} from "../SelectorDecorator";
 import CheckoutBaseComponent from "./CheckoutBaseComponent";
 
 @selector("#opc-billing")
@@ -7,6 +7,7 @@ export default class BillingAddressComponent extends CheckoutBaseComponent {
 
     protected component: Locator;
 
+    private readonly inputAddressDropdownSel = '#billing-address-select';
     private readonly firstNameSel = '#BillingNewAddress_FirstName';
     private readonly lastNameSel = '#BillingNewAddress_LastName';
     private readonly emailAddressSel = '#BillingNewAddress_Email';
@@ -20,6 +21,15 @@ export default class BillingAddressComponent extends CheckoutBaseComponent {
     public constructor(component: Locator) {
         super(component);
         this.component = component;
+    }
+
+    public async selectInputNewAddress() {
+        const inputSelectDropdownEle = this.component.locator(this.inputAddressDropdownSel);
+        const isUsingExistingAddDropdownDisplayed = await inputSelectDropdownEle.count() > 0;
+
+        if (isUsingExistingAddDropdownDisplayed) {
+            await inputSelectDropdownEle.selectOption({label: "New Address"});
+        }
     }
 
     public async inputFirstname(firstName: string): Promise<void> {
