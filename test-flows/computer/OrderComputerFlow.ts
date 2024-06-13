@@ -1,4 +1,4 @@
-import {Page} from "@playwright/test";
+import {expect, Page} from "@playwright/test";
 import defaultCheckoutUserData from "../../test-data/DefaultCheckoutUser.json";
 import defaultCheckoutCardData from "../../test-data/DefaultCheckoutCard.json";
 import ComputerDetailsPage, {ComputerComponentConstructor} from "../../models/pages/ComputerDetailsPage";
@@ -78,12 +78,16 @@ export default class OrderComputerFlow {
             const unitPrice = await cartItemRowComponent.unitPrice();
             const quantity = await cartItemRowComponent.quantity();
             const subtotal = await cartItemRowComponent.subtotal();
-
-            console.log(`unitPrice: ${unitPrice}, quantity: ${quantity}, subtotal: ${subtotal}`);
+            expect(unitPrice * quantity).toBe(subtotal);
         }
 
         const priceCategories = await totalComponent.priceCategories();
-        console.log(`priceCategories: ${JSON.stringify(priceCategories)}`);
+        const subTotal = priceCategories["Sub-Total:"];
+        const shippingFee = priceCategories["Shipping:"];
+        const tax = priceCategories["Tax:"];
+        const total = priceCategories["Total:"];
+        expect(subTotal + shippingFee + tax).toBe(total);
+        expect(this.totalPrice).toBe(total);
     }
 
     public async agreeTOSAndCheckout(): Promise<void> {

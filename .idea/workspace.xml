@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/BillingAddressComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/BillingAddressComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-data/computer/CheapComputerData.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-data/computer/CheapComputerData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-flows/computer/OrderComputerFlow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
