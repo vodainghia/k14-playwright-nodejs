@@ -38,7 +38,7 @@ test('Handle iFrame', async ({ page }) => {
     await page.waitForTimeout(1000);
 });
 
-test.only('Mouse hover and narrow down the searching scope', async ({ page }) => {
+test('Mouse hover and narrow down the searching scope', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/hovers');
 
     // Find all figures

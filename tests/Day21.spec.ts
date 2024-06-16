@@ -108,7 +108,7 @@ test('Execute JS WITH parameters', async ({ page }) => {
     await page.waitForTimeout(2000);
 });
 
-test.only('Execute JS and return the value', async ({ page }) => {
+test('Execute JS and return the value', async ({ page }) => {
     await page.goto('https://www.foodandwine.com/');
     await page.waitForTimeout(5000);
 

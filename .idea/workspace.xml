@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/Tags.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playwright.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Day19.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day19.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Day20.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day20.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Day21.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day21.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,9 @@
     &quot;accountId&quot;: &quot;1322f8b8-d049-4ee5-a0e8-6dbe311b0afc&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/playwright-core/types/types.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
     <bower.json value="" />
@@ -67,12 +74,12 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "day30",
+    "git-widget-placeholder": "day31",
     "javascript.nodejs.core.library.configured.version": "21.7.1",
     "javascript.nodejs.core.library.typings.version": "20.14.2",
     "js.last.introduce.type": "CONST",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/Admin/Software Engineer/SDET-PRO/k14-playwright-nodejs/test-data",
+    "last_opened_file_path": "/Users/Admin/Software Engineer/SDET-PRO/k14-playwright-nodejs/constants",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -86,6 +93,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/constants" />
       <recent name="$PROJECT_DIR$/test-data" />
     </key>
   </component>

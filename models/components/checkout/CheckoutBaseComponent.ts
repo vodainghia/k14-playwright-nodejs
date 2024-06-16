@@ -1,10 +1,11 @@
-import { Locator } from "@playwright/test";
+import {expect, Locator} from "@playwright/test";
 
 export default class CheckoutBaseComponent {
 
     protected component: Locator;
 
     protected readonly continueBtnSel: string = 'input[value="Continue"]';
+    protected readonly checkoutStepTagSel: string = 'div[id^="checkout-step-"]';
 
     protected constructor(component: Locator) {
         this.component = component;
@@ -12,7 +13,8 @@ export default class CheckoutBaseComponent {
 
     public async clickContinueBtn(): Promise<void> {
         await this.component.locator(this.continueBtnSel).click();
-        await this.component.locator(this.continueBtnSel).waitFor({ state: 'hidden', timeout: 5 * 1000 });
+        //await this.component.locator(this.checkoutStepTagSel).getAttribute('style' );
+        await expect(this.component.locator(this.checkoutStepTagSel)).toHaveAttribute('style', 'display: none;');
     }
 
     protected async selectMethodOption(methodSel: string): Promise<string> {
@@ -26,5 +28,5 @@ export default class CheckoutBaseComponent {
     protected getRandomIndexFromLocatorList(listItems: Locator[]): number {
         return Math.floor(Math.random() * listItems.length);
     }
-    
+
 }

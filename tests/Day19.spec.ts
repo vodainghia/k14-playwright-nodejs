@@ -69,7 +69,7 @@ test('Handle login form', async ({ page }) => {
     await page.waitForTimeout(2000);
 });
 
-test.only('Element get Text', async ({ page }) => {
+test('Element get Text', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/');
 
     // Navigating to login form
