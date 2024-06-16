@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/constants/Tags.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Day19.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day19.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Day20.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day20.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Day21.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Day21.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/CheapComputerTest.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/computer/StandardComputerTest.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
