@@ -1,5 +1,5 @@
-import { Locator } from "@playwright/test";
-import { selector } from "../SelectorDecorator";
+import {Locator} from "@playwright/test";
+import {selector} from "../SelectorDecorator";
 
 @selector("#opc-confirm_order")
 export default class ConfirmOrderComponent {
@@ -14,6 +14,6 @@ export default class ConfirmOrderComponent {
 
     public async clickConfirmBtn(): Promise<void> {
         await this.component.locator(this.confirmOrderBtnSel).click();
-        await this.component.locator(this.confirmOrderBtnSel).waitFor({ state: 'hidden', timeout: 5 * 1000 });
+        await this.component.locator(this.confirmOrderBtnSel).waitFor({state: 'hidden'});
     }
 }

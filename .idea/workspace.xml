@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f00a1d-8f63-469d-950c-86a9ecceb50d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/run-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/CheckoutBaseComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/components/checkout/ConfirmOrderComponent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/playwright-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

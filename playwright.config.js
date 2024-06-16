@@ -15,9 +15,10 @@ module.exports = defineConfig({
     ],
     // if CI environment then retry 2 times, else: retry 1 times 
     //retries: process.env.CI ? 2 : 1,
+    timeout: 60 * 1000,
     use: {
         baseURL: 'https://demowebshop.tricentis.com',
-        actionTimeout: 5 * 1000, // the same as implicit wait in Selenium
+        actionTimeout: 10 * 1000, // the same as implicit wait in Selenium
         trace: 'on-first-retry',
         video: 'on-first-retry',
         screenshot: 'only-on-failure',
